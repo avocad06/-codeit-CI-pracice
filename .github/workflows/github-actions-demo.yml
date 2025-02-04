@@ -24,4 +24,12 @@ jobs:
 
       - name: Run test
         run: npm run test
+      
+      - name: Report Coverage
+        run: npx jest --coverage
 
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: avocad06/-codeit-CI-pracice
